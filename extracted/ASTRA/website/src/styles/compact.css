@@ -1,0 +1,95 @@
+/* The desktop overview fits the essentials in a single, readable workspace.
+   Smaller screens reflow normally; never clip content to force a screen fit. */
+.app-shell { position: relative; z-index: 1; }
+.topbar { height: 56px; padding-inline: max(24px, calc((100vw - 1280px) / 2)); }
+main { max-width: 1328px; padding: 16px 24px 0; }
+#overview { display: grid; gap: 14px; }
+.mission-header { position: relative; min-height: 150px; overflow: hidden; }
+.mission-header .hero-copy { width: 75%; padding: 7px 0; }
+.mission-header .eyebrow { font-size: 9px; margin-bottom: 9px; }
+.mission-header h1 { font-size: 29px; }
+.mission-header .hero-copy > p:last-child { margin-top: 7px; font-size: 12px; }
+.mission-header .orbital-scene { width: 320px; right: 0; }
+.mission-header .astronaut { height: 146px; }
+.mission-header .orbit { width: 210px; height: 210px; margin: -105px; }
+
+.dashboard-workspace { display: grid; grid-template-columns: 1.12fr 1fr; gap: 16px; align-items: start; }
+.dashboard-workspace > *, .health-summary > * { min-width: 0; }
+.health-summary { display: grid; gap: 14px; }
+.checkin-composer { margin: 0; padding: 20px; }
+.composer-top { gap: 10px; }
+.composer-top h2 { font-size: 17px; }
+.composer-top p { font-size: 11px; line-height: 1.5; }
+.checkin-composer form { margin-top: 16px; padding-bottom: 14px; gap: 12px; }
+.checkin-composer textarea { min-height: 156px; font-size: 14px; line-height: 1.7; border-radius: 6px; }
+.send-button { width: 40px; height: 40px; }
+.energy-picker { margin: 0; min-width: 0; align-items: center; gap: 6px; }
+.energy-picker legend { float: left; margin: 0 12px 0 0; padding: 8px 0; font-size: 11px; }
+.energy-picker legend span { display: none; }
+.energy-picker label > span { padding: 7px 15px; }
+.session-notes { margin-top: 12px; padding-top: 12px; border: 0; }
+.session-notes summary { font-size: 12px; }
+/* Long histories grow only on request, without disturbing the initial overview. */
+.session-notes[open] #log-list { max-height: 220px; overflow-y: auto; padding-right: 8px; }
+#feeling-feedback { margin-top: 10px; }
+
+.vitals-section { margin: 0; }
+.section-heading { margin-bottom: 10px; }
+.section-heading h2 { font-size: 13px; }
+.vitals-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.vital-card { padding: 12px 14px; border-radius: 12px; }
+.vital-label { font-size: 11px; }
+.vital-value { margin-top: 12px; font-size: 27px; }
+.vital-status { margin-top: 8px; font-size: 9px; }
+.sparkline { width: 65px; height: 28px; right: 14px; bottom: 19px; }
+.trend-panel { padding: 14px 16px; border-radius: 12px; }
+.trend-panel .section-heading h2 span { display: inline; margin-left: 8px; }
+.trend-panel .section-heading { margin-bottom: 6px; }
+.trend-summary { margin-top: 0; }
+.trend-summary strong { font-size: 23px; }
+.trend-summary > span { font-size: 10px; }
+.trend-chart { height: 44px; margin-top: 6px; }
+.chart-axis { margin-top: 6px; font-size: 9px; }
+
+.routine-panel { padding: 14px 18px; display: grid; grid-template-columns: 190px 1fr; align-items: center; column-gap: 20px; }
+.routine-panel .section-heading { margin: 0; }
+.routine-panel > p { display: none; }
+#routine-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.routine-row { margin: 0; min-height: 40px; }
+.routine-row strong { font-size: 11px; }
+.routine-row small { font-size: 9px; }
+.routine-row input { width: 20px; height: 20px; }
+.routine-row > span:last-child { display: none; }
+footer { padding: 14px 0; }
+
+@media (max-width: 1050px) {
+  .dashboard-workspace { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .checkin-composer { padding: 16px; }
+  .routine-panel { grid-template-columns: 1fr; gap: 12px; }
+  .routine-panel .section-heading { justify-content: flex-start; gap: 12px; }
+  .trend-panel .section-heading h2 span { display: block; margin: 5px 0 0; }
+  .sparkline { width: 45px; }
+}
+@media (max-width: 760px) {
+  main { padding: 14px 16px 0; }
+  .topbar { padding-inline: 16px; }
+  .dashboard-workspace { grid-template-columns: 1fr; }
+  .mission-header { min-height: 148px; }
+  .mission-header h1 { font-size: 25px; }
+  .mission-header .hero-copy { width: 74%; background: none; }
+  .mission-header .hero-copy > p:last-child { max-width: 230px; font-size: 11px; }
+  .mission-header .orbital-scene { width: 150px; right: -26px; opacity: .55; }
+  .mission-header .astronaut { height: 116px; }
+  .mission-header .orbit { width: 140px; height: 140px; margin: -70px; }
+  .health-summary { gap: 12px; }
+  .vital-card { padding: 12px; }
+  .sparkline { width: 60px; }
+  #routine-list { grid-template-columns: 1fr; gap: 10px; }
+  .routine-row { min-height: 36px; }
+  .routine-panel { padding: 16px; }
+}
+@media (max-width: 380px) {
+  .energy-picker legend { margin-right: 6px; font-size: 10px; }
+  .energy-picker label > span { padding: 7px 12px; }
+  .sparkline { width: 42px; }
+}

@@ -1,0 +1,156 @@
+{
+  "entries": [
+    {
+      "id": "cardiovascular-deconditioning",
+      "title": "Cardiovascular Deconditioning in Microgravity",
+      "source": "NASA Human Research Program",
+      "url": "https://www.nasa.gov/hrp/",
+      "keywords": ["cardiac", "cardiovascular", "plasma volume", "orthostatic intolerance", "dizziness", "fainting", "fluid shift", "heart", "هبوط الضغط", "انخفاض الضغط", "دوخة", "دوار", "إغماء", "وقوف", "القلب", "السوائل", "ضمور القلب"],
+      "text": "Microgravity removes the gravitational gradient, so blood and interstitial fluid shift headward within hours and plasma volume falls by roughly 10-20%. Stroke volume and cardiac mass decrease and the baroreflex resets, so many crew members develop orthostatic intolerance, with light-headedness or syncope on standing after return to gravity. Countermeasures include daily aerobic and resistive exercise, fluid loading before landing and compression garments. Orthostatic symptoms in flight should prompt assessment of hydration, arrhythmia and medication effects."
+    },
+    {
+      "id": "sans-neuro-ocular",
+      "title": "Spaceflight-Associated Neuro-ocular Syndrome (SANS)",
+      "source": "NASA Human Research Program",
+      "url": "https://www.nasa.gov/hrp/",
+      "keywords": ["SANS", "vision", "eye", "optic disc edema", "hyperopic", "blurred vision", "headache", "النظر", "الرؤية", "ضبابية الرؤية", "العين", "صداع", "ضغط العين", "قصر النظر"],
+      "text": "Prolonged headward fluid shift is associated with optic-disc oedema, choroidal folds, globe flattening and a hyperopic shift, a pattern reported in a substantial fraction of long-duration ISS crew. Vision changes may be asymptomatic and can persist after flight, so monitoring uses visual acuity, Amsler grid, fundoscopy and OCT. Any acute visual loss, eye pain or new visual-field defect needs urgent evaluation rather than being attributed to SANS."
+    },
+    {
+      "id": "bone-mineral-loss",
+      "title": "Bone Mineral Density Loss",
+      "source": "NASA Human Research Program",
+      "url": "https://www.nasa.gov/hrp/",
+      "keywords": ["bone", "osteoporosis", "calcium", "vitamin D", "bisphosphonate", "fracture", "العظام", "هشاشة العظام", "الكالسيوم", "فيتامين د", "كسور"],
+      "text": "Weight-bearing bone loses mineral at roughly 1-1.5% per month in microgravity, with the greatest losses at the hip and spine, and recovery after return is slow and often incomplete. Resistance exercise, adequate calcium and vitamin D intake, and in selected cases antiresorptive drugs such as bisphosphonates are used. Increased bone resorption also raises urinary calcium and the risk of renal stones."
+    },
+    {
+      "id": "muscle-atrophy",
+      "title": "Skeletal Muscle Atrophy and Strength Loss",
+      "source": "NASA Human Research Program",
+      "url": "https://www.nasa.gov/hrp/",
+      "keywords": ["muscle", "atrophy", "strength", "exercise", "sarcopenia", "العضلات", "ضمور العضلات", "ضعف", "قوة", "تمرين"],
+      "text": "Unloaded muscles lose mass and strength in space; without countermeasures, strength losses of 10-20% have been reported after relatively short missions, with postural and antigravity muscles most affected. The ISS countermeasure programme uses resistive and aerobic devices for roughly two hours per day. Rehabilitation after flight focuses on progressive loading and balance retraining."
+    },
+    {
+      "id": "space-radiation",
+      "title": "Space Radiation Exposure",
+      "source": "NASA Human Research Program / NASA-STD-3001",
+      "url": "https://www.nasa.gov/hrp/",
+      "keywords": ["radiation", "cosmic rays", "solar particle event", "dose", "shielding", "cataract", "cancer risk", "إشعاع", "أشعة", "جرعة", "حماية", "سرطان"],
+      "text": "Crew are exposed to galactic cosmic rays and, during solar particle events, to protons that can deliver a large dose within hours. NASA career effective-dose limits are on the order of a few hundred millisieverts (600 mSv career limit under the current standard) and vary with age and sex. Risks include cancer, cataract and possible cardiovascular and central-nervous-system effects. Shielding, storm shelters, dose monitoring and ALARA planning are the main protections; most radiation injury has no acute treatment beyond supportive care."
+    },
+    {
+      "id": "immune-dysregulation",
+      "title": "Immune Dysregulation During Spaceflight",
+      "source": "NASA Human Research Program",
+      "url": "https://www.nasa.gov/hrp/",
+      "keywords": ["immune", "immunity", "infection", "herpes", "virus", "fever", "المناعة", "عدوى", "فيروس", "حمى", "التهاب"],
+      "text": "Spaceflight is associated with altered T-cell function, a shift in cytokine balance and reactivation of latent herpesviruses such as EBV and CMV, consistent with impaired cell-mediated immunity. Sleep loss, stress and nutritional changes contribute. Crew with fever, rash or unusual infections in flight deserve a lower threshold for investigation and early treatment."
+    },
+    {
+      "id": "sleep-circadian",
+      "title": "Sleep and Circadian Rhythm in Space",
+      "source": "NASA Human Research Program",
+      "url": "https://www.nasa.gov/hrp/",
+      "keywords": ["sleep", "insomnia", "circadian", "fatigue", "melatonin", "daytime sleepiness", "النوم", "أرق", "إرهاق", "تعب", "نعاس", "ساعة الجسم"],
+      "text": "Low Earth orbit gives about 16 sunrises per day, and crew average roughly six hours of sleep, below the recommended seven to eight. Chronic sleep restriction degrades vigilance, mood and performance and raises the risk of operational error. Countermeasures include fixed sleep schedules, scheduled light exposure, eye masks and earplugs, and short strategic naps, with melatonin used selectively. Persistent insomnia or daytime sleepiness should be evaluated for circadian disruption, carbon dioxide exposure and behavioural causes."
+    },
+    {
+      "id": "behavioural-health",
+      "title": "Behavioural Health in Isolated, Confined Environments",
+      "source": "NASA Human Research Program",
+      "url": "https://www.nasa.gov/hrp/",
+      "keywords": ["depression", "anxiety", "stress", "isolation", "mental health", "mood", "اكتئاب", "قلق", "توتر", "عزلة", "نفسية", "مزاج"],
+      "text": "Long-duration crews face confinement, monotony, separation from family and communication delay, all of which can produce irritability, low mood, anxiety and interpersonal friction. Screening tools and regular private behavioural-health conferences help detect problems early. Warning signs include persistent low mood, sleep disturbance, withdrawal and thoughts of self-harm, which require immediate escalation to the crew surgeon."
+    },
+    {
+      "id": "space-motion-sickness",
+      "title": "Space Motion Sickness",
+      "source": "NASA Human Research Program",
+      "url": "https://www.nasa.gov/hrp/",
+      "keywords": ["motion sickness", "nausea", "vomiting", "dizziness", "vestibular", "antiemetic", "دوار", "غثيان", "قيء", "دوخة", "دوار الحركة"],
+      "text": "Space motion sickness affects roughly 60-80% of crew during the first days of flight, with nausea, malaise, headache and vomiting, and usually resolves within two to four days as the vestibular system adapts. Promethazine, scopolamine and ondansetron are used, and sudden head movements should be avoided early in flight. Persistent vomiting risks dehydration and electrolyte loss and needs fluid and antiemetic management."
+    },
+    {
+      "id": "nutrition-hydration",
+      "title": "Nutrition and Hydration in Spaceflight",
+      "source": "NASA Human Research Program",
+      "url": "https://www.nasa.gov/hrp/",
+      "keywords": ["hydration", "water", "nutrition", "vitamin D", "iron", "dehydration", "electrolytes", "سوائل", "ماء", "جفاف", "تغذية", "فيتامين", "أملاح"],
+      "text": "Crew fluid requirements are similar to terrestrial needs, roughly 2-2.5 litres per day including water in food, and insufficient intake is common because thirst is blunted by the headward fluid shift. Adequate sodium, calcium, vitamin D and protein support bone and muscle, and iron status is monitored because haemolysis rises in flight. Dehydration worsens orthostatic intolerance, renal stone risk and cognitive performance."
+    },
+    {
+      "id": "exercise-countermeasures",
+      "title": "Exercise Countermeasures on the ISS",
+      "source": "NASA Human Research Program",
+      "url": "https://www.nasa.gov/hrp/",
+      "keywords": ["exercise", "treadmill", "ARED", "cycle ergometer", "fitness", "VO2max", "تمرين", "رياضة", "مشاية", "لياقة"],
+      "text": "The ISS countermeasure programme combines the Advanced Resistive Exercise Device, a harnessed treadmill and a cycle ergometer for roughly 2.5 hours per day including setup. Resistance training preserves bone and muscle, while aerobic work maintains cardiovascular capacity and VO2max. Exercise is also used as a countermeasure for sleep and mood, but it increases fluid and energy requirements."
+    },
+    {
+      "id": "renal-stones",
+      "title": "Kidney Stone Risk in Spaceflight",
+      "source": "NASA Human Research Program",
+      "url": "https://www.nasa.gov/hrp/",
+      "keywords": ["kidney stone", "renal colic", "calcium oxalate", "flank pain", "haematuria", "حصوة", "حصى الكلى", "مغص كلوي", "ألم الخاصرة", "دم في البول", "كلى"],
+      "text": "Bone resorption raises urinary calcium while low fluid intake lowers urine volume, so crew are at increased risk of calcium oxalate and other renal stones. Stones in flight can cause severe flank pain, haematuria, nausea and, if obstructing with infection, sepsis; ultrasound and telemedicine support diagnosis. Prevention is hydration, adequate dietary calcium and, in selected cases, potassium citrate."
+    },
+    {
+      "id": "eva-decompression",
+      "title": "Decompression Sickness and EVA",
+      "source": "NASA EVA physiology",
+      "url": "https://www.nasa.gov/spacewalk/",
+      "keywords": ["decompression sickness", "EVA", "spacewalk", "nitrogen", "bends", "joint pain", "تخفيف الضغط", "خروج للفضاء", "ألم المفاصل", "نيتروجين"],
+      "text": "EVA suits operate at about 4.3 psi, so crew prebreathe 100% oxygen to wash out nitrogen before spacewalks. Decompression sickness most often presents as joint pain but can include skin, pulmonary, neurological or cardiovascular symptoms. Treatment is 100% oxygen, recompression and hyperbaric therapy where available, and symptoms during or after EVA must never be dismissed as musculoskeletal strain."
+    },
+    {
+      "id": "co2-hypercapnia",
+      "title": "Carbon Dioxide and Hypercapnia",
+      "source": "NASA ISS environmental monitoring",
+      "url": "https://www.nasa.gov/station/",
+      "keywords": ["CO2", "carbon dioxide", "hypercapnia", "headache", "air quality", "ثاني أكسيد الكربون", "صداع", "هواء", "تنفس"],
+      "text": "ISS cabin carbon dioxide is typically kept between about 2 and 3 mmHg, above terrestrial levels, and periods of 4-5 mmHg have been recorded. Exposure is associated with headache, eye irritation, fatigue and impaired decision-making. Symptoms should prompt checks of scrubbing performance and ventilation, and acute severe hypercapnia requires supplemental oxygen and removal from the exposure."
+    },
+    {
+      "id": "space-anaemia",
+      "title": "Spaceflight-Associated Anaemia",
+      "source": "NASA / Nature Medicine 2022 haemolysis study",
+      "url": "https://www.nasa.gov/hrp/",
+      "keywords": ["anaemia", "anemia", "haemolysis", "red blood cells", "haemoglobin", "فقر دم", "أنيميا", "الدم", "هيموغلوبين", "تكسر الدم"],
+      "text": "Haemolysis increases in spaceflight, with red-cell destruction about 50% above terrestrial rates and red-cell mass falling roughly 10% during six-month missions; the effect has been called space anaemia. It is usually compensated and resolves after return, but persistent anaemia in flight warrants evaluation for blood loss, haemolysis, nutrition and radiation effects."
+    },
+    {
+      "id": "space-pharmacology",
+      "title": "Pharmacokinetics in Spaceflight",
+      "source": "NASA Human Research Program",
+      "url": "https://www.nasa.gov/hrp/",
+      "keywords": ["pharmacokinetics", "drug", "dose", "medication", "drug stability", "دواء", "أدوية", "جرعة", "دلالة دوائية"],
+      "text": "Microgravity alters gastric emptying, gastrointestinal blood flow, plasma volume and hepatic metabolism, so drug absorption, distribution and clearance can differ from terrestrial values. Drug stability may be reduced by radiation and long storage. Dosing therefore relies on clinical response and, where possible, therapeutic drug monitoring, and renal or hepatic impairment amplifies these uncertainties."
+    },
+    {
+      "id": "medical-contingency",
+      "title": "Medical Contingency Support and Evacuation",
+      "source": "NASA Crew Health Care System",
+      "url": "https://www.nasa.gov/hrp/",
+      "keywords": ["emergency", "evacuation", "telemedicine", "CPR", "trauma", "طوارئ", "إخلاء", "إنعاش", "إسعاف", "رعاية طبية"],
+      "text": "The Crew Health Care System provides diagnostic equipment, medications and a limited surgical capability; definitive care for serious illness may require return to Earth, with timelines that depend on orbit and vehicle. Telemedicine links the crew to flight surgeons, and procedures such as CPR require restraints and adaptation in microgravity. Chest pain, severe bleeding, altered consciousness or breathing difficulty should trigger immediate medical-contingency activation."
+    },
+    {
+      "id": "wound-healing",
+      "title": "Wound Healing and Infection Risk",
+      "source": "NASA Human Research Program",
+      "url": "https://www.nasa.gov/hrp/",
+      "keywords": ["wound", "healing", "infection", "biofilm", "laceration", "burn", "جرح", "التئام", "عدوى", "حرق", "تطهير"],
+      "text": "Wound healing may be slower in microgravity and bacterial biofilm formation is increased, so even minor injuries deserve thorough cleaning, dressing and follow-up. Signs of infection include spreading erythema, warmth, purulent discharge, fever and rising pain. Early antibiotics and, where available, drainage are indicated for spreading infection."
+    },
+    {
+      "id": "endocrine-metabolic",
+      "title": "Endocrine and Metabolic Changes in Spaceflight",
+      "source": "NASA Human Research Program",
+      "url": "https://www.nasa.gov/hrp/",
+      "keywords": ["endocrine", "thyroid", "cortisol", "insulin", "diabetes", "metabolism", "غدة", "درقية", "كورتيزول", "سكر", "تمثيل غذائي"],
+      "text": "Spaceflight alters thyroid hormone levels, cortisol rhythms and insulin sensitivity, and total body protein and fat distribution change. Laboratory values therefore need to be interpreted against in-flight rather than terrestrial reference ranges. Unexplained weight loss, persistent hyperglycaemia or hypotension should prompt endocrine and nutritional review."
+    }
+  ]
+}

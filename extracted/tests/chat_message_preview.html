@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OrbitNexus message layout checks</title>
+<link rel="stylesheet" href="../ASTRA/website/src/styles/orbitnexus.css">
+<link rel="stylesheet" href="../ASTRA/website/src/modules/checkin/message-content.css">
+<style>
+  body { margin: 24px; background: #08090b; color: #eee; font: 15px system-ui, sans-serif; }
+  h1 { font-size: 20px; } main { display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start; }
+  section { width: min(560px, 100%); } section.narrow { width: min(320px, 100%); }
+  .chat-bubble { box-sizing: border-box; max-width: 100%; margin-block: 12px; }
+  #results { line-height: 1.8; } .pass { color: #cddbcf; } .fail { color: #ffb4b4; }
+</style>
+<h1>Arabic / English message layout</h1>
+<p>Display fixtures only. No model, microphone, or external API calls.</p>
+<main>
+  <section id="wide"><h2>Mixed-language reply</h2></section>
+  <section id="narrow" class="narrow"><h2>Narrow layout</h2></section>
+</main>
+<h2>Regression checks</h2><ul id="results"></ul>
+<script type="module">
+  import { renderChatMessage } from '../ASTRA/website/src/modules/checkin/message-renderer.js';
+  import { renderReferenceSources } from '../ASTRA/website/src/modules/checkin/reference-sources.js';
+  const reply = '### توضيح القراءات\nالقيم دي أمثلة للتنسيق فقط، وليست تقييمًا صحيًا.\n\n'
+    + '1. معدل النبض (Heart Rate): **72 bpm**.\n'
+    + '2. نسبة الأكسجين (SpO2): **98%**.\n'
+    + '3. ضغط الدم (Blood Pressure): **120/80 mmHg**.\n\n'
+    + 'HRV هو اختصار لتباين معدل ضربات القلب.\n\n'
+    + 'English-only paragraphs keep their own reading direction.\n\n'
+    + 'مثال رابط: [Documentation](https://example.com/reference).';
+  function bubble(target, text) {
+    const article = document.createElement('article');
+    article.className = 'chat-bubble ai';
+    const content = document.createElement('div');
+    content.className = 'bubble-text';
+    renderChatMessage(content, text);
+    article.append(content);
+    target.append(article);
+    return content;
+  }
+  const wide = bubble(document.querySelector('#wide'), reply);
+  const narrow = bubble(document.querySelector('#narrow'), reply);
+  const check = (name, condition) => {
+    const item = document.createElement('li');
+    item.className = condition ? 'pass' : 'fail';
+    item.textContent = `${condition ? 'PASS' : 'FAIL'} — ${name}`;
+    document.querySelector('#results').append(item);
+  };
+  check('Arabic headings and list items use RTL', wide.querySelector('h3').dir === 'rtl'
+    && [...wide.querySelectorAll('li')].every(item => item.dir === 'rtl'));
+  check('English-led Arabic paragraph remains RTL', [...wide.querySelectorAll('p')]
+    .some(p => p.textContent.startsWith('HRV') && p.dir === 'rtl'));
+  check('English paragraph remains LTR', [...wide.querySelectorAll('p')]
+    .some(p => p.textContent.startsWith('English-only') && p.dir === 'ltr'));
+  check('English term and measurement stay isolated', [...wide.querySelectorAll('bdi')]
+    .some(el => el.textContent === '(Blood Pressure)' && el.dir === 'ltr')
+    && [...wide.querySelectorAll('bdi')].some(el => el.textContent === '120/80 mmHg'));
+  check('Numbered steps are a real ordered list', wide.querySelectorAll('ol > li').length === 3);
+  check('Markdown emphasis produces semantic strong text', wide.querySelectorAll('strong').length === 3);
+  check('Reference links are usable and isolated', wide.querySelector('a').href === 'https://example.com/reference'
+    && wide.querySelector('a').rel.includes('noopener'));
+  const scratch = document.createElement('div');
+  const unsafe = '<img src=x onerror=alert(1)> [bad](javascript:alert(1))';
+  renderChatMessage(scratch, unsafe);
+  check('HTML and script links cannot become executable DOM', !scratch.querySelector('img,script,a')
+    && scratch.textContent.includes('<img src=x onerror=alert(1)>'));
+  renderChatMessage(scratch, '```html\n<script>alert(1)</' + 'script>\n```');
+  check('Code blocks retain literal text', scratch.querySelector('pre code').textContent.includes('<script>')
+    && !scratch.querySelector('script'));
+  renderChatMessage(scratch, '٤. مثال **SpO₂**\n٥. نص آخر');
+  check('Arabic list numbers preserve their start', scratch.querySelector('ol').start === 4);
+  renderChatMessage(scratch, 'Updated');
+  check('Updating a bubble replaces old content', scratch.textContent === 'Updated' && !scratch.querySelector('ol'));
+  const sources = [{id: 'S4', title: 'Monitoring radiation for astronaut health',
+    url: 'https://www.asc-csa.gc.ca/eng/news/articles/2026/2026-02-26-monitoring-radiation-astronaut-health.asp',
+    fetched_at: '2026-11-14T10:30:00+00:00', stale: true}];
+  const status = {state: 'matched', stale_sources: ['S4']};
+  renderReferenceSources(narrow.parentElement, sources, status, reply);
+  const references = narrow.parentElement.querySelector('.reference-sources');
+  check('Arabic references isolate English titles and UTC timestamps', references.dir === 'rtl'
+    && references.querySelector('a').dir === 'auto' && references.querySelector('bdi').dir === 'ltr');
+  check('Reference URL comes from server metadata', references.querySelector('a').href === sources[0].url);
+  check('Older cached source is visibly labelled', references.textContent.includes('نسخة محفوظة قديمة'));
+  renderReferenceSources(scratch, [{...sources[0], url: 'javascript:alert(1)'}], status, 'English reply');
+  check('Source metadata cannot insert a script link', !scratch.querySelector('a'));
+  renderReferenceSources(scratch, [], {state: 'unavailable'}, 'المراجع غير متاحة');
+  check('Unavailable references have explicit status and replace old panel', scratch.querySelectorAll('.reference-sources').length === 1
+    && scratch.textContent.includes('تعذر الوصول'));
+  requestAnimationFrame(() => {
+    check('Narrow message does not overflow horizontally', narrow.scrollWidth <= narrow.clientWidth + 1);
+    check('Reference panel does not overflow horizontally', references.scrollWidth <= references.clientWidth + 1);
+    const failed = document.querySelectorAll('#results .fail').length;
+    document.title = `${failed ? 'FAIL' : 'PASS'} — OrbitNexus message layout checks`;
+  });
+</script>
+</html>

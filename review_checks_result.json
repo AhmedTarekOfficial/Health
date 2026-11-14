@@ -1,0 +1,38 @@
+{
+  "python_syntax_files_passed": 15,
+  "empty_packet": {
+    "mission_health_summary": "ALL SYSTEMS NOMINAL (Astronaut EVA/IVA Ready)"
+  },
+  "missing_models": {
+    "stress": {
+      "error": "Stress model not loaded"
+    },
+    "anomaly_detection": {
+      "error": "Anomaly model not loaded"
+    },
+    "mission_health_summary": "ALL SYSTEMS NOMINAL (Astronaut EVA/IVA Ready)"
+  },
+  "live_then_chat": {
+    "displayed_hr": 123.0,
+    "shared_state": {},
+    "system_message": "Test system\n\nNo memory"
+  },
+  "anonymous_chat_guard": "allowed (None return)",
+  "voice_negation_mismatch": {
+    "voice_enabled": true,
+    "text": "Stress appears elevated. Review recovery time, exertion, and rest periods before making a decision.",
+    "transcript": "No signs of stress were detected."
+  },
+  "radiation_score_ignores_genomics": 18,
+  "duplicate_routes": {
+    "/api/sensors/overview": [
+      541,
+      774
+    ]
+  },
+  "heart_feature_counts": {
+    "notebook": 6,
+    "shipped_metadata": 9
+  },
+  "dataset_files": 0
+}

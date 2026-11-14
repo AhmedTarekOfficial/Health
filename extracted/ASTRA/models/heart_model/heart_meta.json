@@ -1,0 +1,16 @@
+{
+  "model_type": "ExtraTreesRegressor",
+  "mae_bpm": 1.0960485927405887,
+  "r2_score": 0.934730079809691,
+  "features": [
+    "pleth_mean",
+    "pleth_std",
+    "pleth_min",
+    "pleth_max",
+    "pleth_p2p",
+    "pleth_rms",
+    "resp_mean",
+    "resp_std",
+    "resp_p2p"
+  ]
+}

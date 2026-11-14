@@ -1,0 +1,9 @@
+{
+  "model_type": "RandomForestClassifier",
+  "accuracy": 1.0,
+  "study_id": "NASA OSD-178 (GeneLab)",
+  "classes": {
+    "0": "Earth Ground Control",
+    "1": "Orbital Spaceflight Adaptation State"
+  }
+}

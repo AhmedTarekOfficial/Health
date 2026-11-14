@@ -1,0 +1,59 @@
+/* Text direction belongs to the content, not to the alignment of chat bubbles. */
+.chat-bubble { min-width: 0; }
+.chat-message-content {
+  text-align: start;
+  line-height: 1.85;
+  overflow-wrap: anywhere;
+  letter-spacing: normal;
+}
+.chat-message-content :is(p, h3, ul, ol, pre) { margin: 0; }
+.chat-message-content > * + * { margin-block-start: .75em; }
+.chat-message-content h3 { font-size: 1.05em; line-height: 1.6; font-weight: 600; }
+.chat-message-content :is(ul, ol) { padding-inline-start: 1.6em; }
+.chat-message-content li + li { margin-block-start: .4em; }
+.chat-message-content :is(p, li, h3) { text-align: start; unicode-bidi: isolate; }
+.chat-message-content bdi { unicode-bidi: isolate; }
+.chat-message-content strong { color: inherit; font-weight: 650; }
+.chat-message-content a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: .2em;
+  unicode-bidi: isolate;
+}
+.chat-message-content a:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+.chat-message-content code {
+  font-family: ui-monospace, monospace;
+  font-size: .95em;
+  background: #ffffff09;
+  padding: .1em .3em;
+  border-radius: 4px;
+  unicode-bidi: isolate;
+}
+.chat-message-content pre {
+  max-width: 100%;
+  overflow-x: auto;
+  padding: .7em;
+  border: 1px solid #ffffff18;
+  border-radius: 6px;
+  text-align: left;
+}
+.chat-message-content pre code { background: none; padding: 0; }
+#chat-input { min-width: 0; text-align: start; }
+.reference-sources {
+  margin-block-start: 12px;
+  padding-block-start: 10px;
+  border-top: 1px solid #ffffff18;
+  text-align: start;
+  font-size: 11px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+.reference-sources p { margin: 0; }
+.reference-title { font-weight: 600; margin-block-end: 6px !important; }
+.reference-row { margin-block: 6px; }
+.reference-row a { color: inherit; text-decoration: underline; unicode-bidi: isolate; }
+.reference-row small { display: block; opacity: .75; }
+@media (max-width: 600px) {
+  .chat-bubble { max-width: 94%; }
+  .chat-message-content { font-size: 13px; }
+}

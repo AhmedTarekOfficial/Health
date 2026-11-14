@@ -1,0 +1,132 @@
+{
+  "entries": [
+    {
+      "id": "hypertension",
+      "title": "Hypertension: Recognition and Management",
+      "source": "AHA/ACC 2017 guideline summary",
+      "url": "https://www.ahajournals.org/doi/10.1161/HYP.0000000000000065",
+      "keywords": ["hypertension", "high blood pressure", "blood pressure reading", "systolic", "diastolic", "ضغط", "ضغط الدم", "ارتفاع الضغط", "ضغط مرتفع", "الضغط عالي", "ضغطي"],
+      "text": "Hypertension is a sustained blood pressure of 130/80 mmHg or higher under current US guidelines. A single elevated reading, such as 150/95 or 170/100 without symptoms, should be repeated after five minutes of rest before treatment decisions. First-line drugs include thiazide diuretics, ACE inhibitors or ARBs, and dihydropyridine calcium-channel blockers, and most patients with stage 2 hypertension need two agents. A reading of 180/120 mmHg with chest pain, dyspnoea, neurological deficit or acute kidney injury defines a hypertensive emergency and requires controlled parenteral reduction rather than rapid oral lowering."
+    },
+    {
+      "id": "hypotension-shock",
+      "title": "Hypotension and Shock",
+      "source": "Surviving Sepsis Campaign / trauma resuscitation principles",
+      "url": "https://www.sccm.org/survivingsepsiscampaign",
+      "keywords": ["hypotension", "shock", "low blood pressure", "collapse", "هبوط الضغط", "انخفاض الضغط", "الضغط منخفض", "ضغط منخفض", "صدمة", "إغماء", "ضعف النبض"],
+      "text": "Shock is inadequate tissue perfusion and may exist with a normal blood pressure; suspect it with tachycardia, cool or mottled skin, confusion, oliguria or a falling trend. A systolic pressure below 90 mmHg or a mean arterial pressure below 65 mmHg is a red flag. Initial management is oxygen, intravenous crystalloid boluses with repeated reassessment, control of bleeding, and early vasopressors when pressure does not respond."
+    },
+    {
+      "id": "hypoxia",
+      "title": "Hypoxia and Oxygen Therapy",
+      "source": "WHO / aerospace physiology guidance",
+      "url": "https://www.who.int/",
+      "keywords": ["hypoxia", "oxygen", "saturation", "SpO2", "breathlessness", "نقص أكسجين", "أكسجين", "ضيق تنفس", "تشبع الأكسجين"],
+      "text": "Hypoxia presents with dyspnoea, confusion, agitation, tachycardia and eventually loss of consciousness, and resting pulse oximetry below 90% is abnormal. Give supplemental oxygen titrated to 94-98%, or 88-92% for patients at risk of hypercapnic respiratory failure, sit the patient upright, and look for pneumonia, pulmonary embolism, pneumothorax, anaemia and cardiac failure. A normal oximeter reading does not exclude carbon monoxide poisoning or severe anaemia."
+    },
+    {
+      "id": "acute-coronary-syndrome",
+      "title": "Acute Coronary Syndrome",
+      "source": "AHA/ACC guideline summary",
+      "url": "https://www.ahajournals.org/",
+      "keywords": ["chest pain", "heart attack", "myocardial infarction", "ACS", "ألم الصدر", "ألم في الصدر", "جلطة قلبية", "ذبحة", "قلب"],
+      "text": "Suspect acute coronary syndrome with chest pressure, radiation to the arm or jaw, diaphoresis, nausea or dyspnoea; in women, older adults and people with diabetes the presentation may be atypical. Obtain a 12-lead ECG within 10 minutes and serial troponins. Give aspirin 162-325 mg chewed, nitroglycerin if not hypotensive, and oxygen only if hypoxaemic, and arrange immediate reperfusion for ST-elevation."
+    },
+    {
+      "id": "atrial-fibrillation",
+      "title": "Atrial Fibrillation",
+      "source": "ACC/AHA atrial fibrillation guidance",
+      "url": "https://www.ahajournals.org/",
+      "keywords": ["atrial fibrillation", "irregular pulse", "palpitations", "arrhythmia", "رفة قلب", "عدم انتظام", "خفقان", "اضطراب نظم"],
+      "text": "Atrial fibrillation causes an irregularly irregular pulse and may present with palpitations, dyspnoea, fatigue or heart failure. Confirm with ECG, assess rate, symptoms and thromboembolic risk. Rate control uses beta-blockers or non-dihydropyridine calcium-channel blockers, and anticoagulation is indicated when the CHA2DS2-VASc score is elevated. New atrial fibrillation with hypotension or ischaemia requires urgent cardioversion."
+    },
+    {
+      "id": "sepsis",
+      "title": "Sepsis and Septic Shock",
+      "source": "Surviving Sepsis Campaign 2021",
+      "url": "https://www.sccm.org/survivingsepsiscampaign",
+      "keywords": ["sepsis", "septic shock", "infection", "fever", "تسمم الدم", "عدوى", "حمى", "صدمة إنتانية"],
+      "text": "Sepsis is life-threatening organ dysfunction from a dysregulated response to infection; qSOFA flags a respiratory rate of 22 or more, altered mentation and systolic pressure of 100 mmHg or less. Obtain cultures and lactate, give broad-spectrum antibiotics within one hour, and resuscitate with 30 mL/kg crystalloid, adding vasopressors to maintain a mean arterial pressure of 65 mmHg. Fever may be absent, especially in older or immunocompromised patients."
+    },
+    {
+      "id": "anaphylaxis",
+      "title": "Anaphylaxis",
+      "source": "World Allergy Organization / Resuscitation Council guidance",
+      "url": "https://www.worldallergy.org/",
+      "keywords": ["anaphylaxis", "allergy", "allergic reaction", "epinephrine", "adrenaline", "swelling", "حساسية", "الحساسية", "تحسس", "صدمة تحسسية", "تورم", "أدرينالين", "اعراض الحساسية"],
+      "text": "Anaphylaxis should be suspected with acute urticaria, angioedema, bronchospasm or hypotension after a likely trigger; skin signs are absent in up to 20% of cases. Give adrenaline 0.3-0.5 mg intramuscularly into the anterolateral thigh (0.01 mg/kg in children, maximum 0.5 mg), repeat every 5-15 minutes as needed, position supine with legs raised, and give high-flow oxygen and intravenous fluids. Antihistamines and steroids are adjuncts only and never replace adrenaline."
+    },
+    {
+      "id": "acute-stroke",
+      "title": "Acute Stroke Recognition",
+      "source": "AHA/ASA stroke guidance",
+      "url": "https://www.stroke.org/",
+      "keywords": ["stroke", "FAST", "weakness", "speech", "facial droop", "سكتة دماغية", "جلطة دماغية", "ضعف", "شلل", "ثقل اللسان"],
+      "text": "Use FAST: facial droop, arm weakness, speech difficulty, time to call for help. Sudden focal deficit, visual loss, severe headache or ataxia requires urgent neuroimaging; thrombolysis is possible within 4.5 hours of onset and thrombectomy up to 24 hours in selected large-vessel occlusions. Protect the airway, keep oxygen saturation above 94%, treat fever and hyperglycaemia, and avoid unnecessary blood-pressure lowering unless it is extreme or thrombolysis is planned."
+    },
+    {
+      "id": "hypoglycaemia",
+      "title": "Hypoglycaemia",
+      "source": "American Diabetes Association",
+      "url": "https://diabetes.org/",
+      "keywords": ["hypoglycaemia", "hypoglycemia", "low blood sugar", "glucose", "هبوط السكر", "سكر منخفض", "انخفاض السكر", "غيبوبة"],
+      "text": "Hypoglycaemia is a blood glucose below 70 mg/dL (3.9 mmol/L) and causes sweating, tremor, hunger, confusion, seizures and coma. Treat a conscious patient with 15-20 g of fast-acting carbohydrate and recheck in 15 minutes; use intravenous glucose or intramuscular glucagon when the patient cannot swallow. Look for the cause, including missed meals, excess insulin or sulfonylurea, alcohol and sepsis, and adjust therapy afterwards."
+    },
+    {
+      "id": "dehydration",
+      "title": "Dehydration and Fluid Replacement",
+      "source": "WHO oral rehydration guidance",
+      "url": "https://www.who.int/",
+      "keywords": ["dehydration", "fluids", "thirst", "dry mouth", "جفاف", "سوائل", "عطش", "جفاف الفم", "إسهال"],
+      "text": "Dehydration causes thirst, dry mucous membranes, reduced skin turgor, tachycardia, postural hypotension and concentrated urine; severe cases progress to shock and acute kidney injury. Mild to moderate cases can be treated with oral rehydration solution, while severe dehydration or inability to drink needs intravenous crystalloid. Accurate intake and output, daily weights and electrolyte monitoring guide replacement."
+    },
+    {
+      "id": "acute-kidney-injury",
+      "title": "Acute Kidney Injury",
+      "source": "KDIGO clinical practice guidance",
+      "url": "https://kdigo.org/",
+      "keywords": ["acute kidney injury", "creatinine", "urine output", "AKI", "فشل كلوي", "كلى", "كرياتينين", "قلة البول"],
+      "text": "Acute kidney injury is a creatinine rise of 0.3 mg/dL or more within 48 hours, a 1.5-fold rise within seven days, or urine output below 0.5 mL/kg/h for six hours. Common causes are hypovolaemia, sepsis, obstruction and nephrotoxic drugs. Management is restoring perfusion, stopping nephrotoxins, relieving obstruction and monitoring potassium, acid-base status and fluid balance; dialysis is indicated for refractory hyperkalaemia, acidosis, overload or uraemic complications."
+    },
+    {
+      "id": "diabetic-ketoacidosis",
+      "title": "Diabetic Ketoacidosis",
+      "source": "American Diabetes Association",
+      "url": "https://diabetes.org/",
+      "keywords": ["DKA", "ketoacidosis", "diabetes", "ketones", "حموضة الكيتون", "سكري", "كيتون", "جفاف شديد"],
+      "text": "Diabetic ketoacidosis presents with hyperglycaemia above 250 mg/dL, ketones, acidosis with pH below 7.3 and bicarbonate below 18 mmol/L, often with vomiting, abdominal pain, dehydration and Kussmaul breathing. Treat with isotonic intravenous fluids, an insulin infusion and careful potassium replacement, since total body potassium is depleted even when serum potassium is normal or high. Look for infection, missed insulin and cardiac ischaemia as precipitants."
+    },
+    {
+      "id": "obstructive-sleep-apnoea",
+      "title": "Obstructive Sleep Apnoea",
+      "source": "American Academy of Sleep Medicine",
+      "url": "https://aasm.org/",
+      "keywords": ["sleep apnoea", "sleep apnea", "snoring", "daytime sleepiness", "CPAP", "انقطاع النفس", "شخير", "نعاس نهاري", "توقف التنفس"],
+      "text": "Obstructive sleep apnoea causes loud snoring, witnessed apnoeas, unrefreshing sleep and daytime sleepiness; diagnosis uses sleep testing with an apnoea-hypopnoea index of 5 or more with symptoms, or 15 or more regardless of symptoms. Untreated disease worsens hypertension, arrhythmia, cardiovascular risk and alertness. Treatment includes weight loss, avoiding alcohol and sedatives at night, positional therapy and CPAP."
+    },
+    {
+      "id": "depression-suicide-risk",
+      "title": "Depression and Suicide Risk",
+      "source": "DSM-5 criteria / PHQ-9 screening",
+      "url": "https://www.psychiatry.org/",
+      "keywords": ["depression", "suicide", "low mood", "PHQ-9", "اكتئاب", "انتحار", "إيذاء النفس", "مزاج منخفض", "يأس"],
+      "text": "Major depression requires at least two weeks of depressed mood or anhedonia plus sleep, appetite, energy, concentration, psychomotor or guilt symptoms and functional impairment. The PHQ-9 scores severity, and a score of 10 or more suggests probable depression. Always ask directly about self-harm and suicidal thoughts; active intent or a plan needs immediate safety measures and urgent psychiatric support, not watchful waiting."
+    },
+    {
+      "id": "pneumonia",
+      "title": "Community-Acquired Pneumonia",
+      "source": "ATS/IDSA pneumonia guidance",
+      "url": "https://www.thoracic.org/",
+      "keywords": ["pneumonia", "lung infection", "cough", "sputum", "التهاب رئوي", "التهاب الرئة", "كحة", "بلغم", "ضيق تنفس"],
+      "text": "Pneumonia presents with fever, cough, purulent sputum, pleuritic pain and dyspnoea, with crackles or reduced breath sounds, and chest imaging shows a new infiltrate. Severity scoring such as CURB-65 guides the site of care: confusion, urea above 7 mmol/L, respiratory rate 30 or more, low blood pressure and age 65 or older. Start empiric antibiotics promptly and reassess at 48-72 hours; failure to improve suggests a complication, resistance or an alternative diagnosis."
+    },
+    {
+      "id": "fever-isolated-crew",
+      "title": "Fever in the Isolated Crew Member",
+      "source": "WHO / NASA CHeCS clinical guidance",
+      "url": "https://www.who.int/",
+      "keywords": ["fever", "temperature", "infection", "حمى", "حرارة", "سخونة", "عدوى"],
+      "text": "Fever is a core temperature of 38 degrees Celsius or higher and is most often infectious, but can reflect heat stress, drugs or thromboembolism. Assess for localising symptoms, rash, respiratory or urinary signs and sepsis criteria, and obtain cultures when possible before antibiotics. In a remote or space setting, a low threshold for broad-spectrum antibiotics and evacuation planning is appropriate when sepsis cannot be excluded."
+    }
+  ]
+}

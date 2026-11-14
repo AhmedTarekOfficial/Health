@@ -1,0 +1,43 @@
+{
+  "model_type": "RandomForestClassifier",
+  "accuracy": 0.9962234064873484,
+  "features": [
+    "heart_rate",
+    "wrist_temp",
+    "wrist_acc_x",
+    "wrist_acc_y",
+    "wrist_acc_z",
+    "wrist_gyro_x",
+    "wrist_gyro_y",
+    "wrist_gyro_z",
+    "chest_temp",
+    "chest_acc_x",
+    "chest_acc_y",
+    "chest_acc_z",
+    "chest_gyro_x",
+    "chest_gyro_y",
+    "chest_gyro_z",
+    "ankle_temp",
+    "ankle_acc_x",
+    "ankle_acc_y",
+    "ankle_acc_z",
+    "ankle_gyro_x",
+    "ankle_gyro_y",
+    "ankle_gyro_z"
+  ],
+  "classes": {
+    "1": "Lying",
+    "2": "Sitting",
+    "3": "Standing",
+    "4": "Walking",
+    "5": "Running",
+    "6": "Cycling",
+    "7": "Nordic Walking",
+    "12": "Ascending Stairs",
+    "13": "Descending Stairs",
+    "16": "Vacuum Cleaning",
+    "17": "Ironing",
+    "24": "Rope Jumping"
+  },
+  "n_samples": 119152
+}

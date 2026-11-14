@@ -1,0 +1,270 @@
+/* Shared monochrome tokens. Change these to retheme the whole interface. */
+:root {
+  color-scheme:dark;
+  --bg:#08090b;
+  --panel:#111215;
+  --line:#ffffff12;
+  --text:#f3f3f4;
+  --muted:#8d8e97;
+  --faint:#595b65;
+  --radius:18px;
+  --font:Inter,Arial,Helvetica,sans-serif
+}
+
+* {
+  box-sizing:border-box
+}
+
+body {
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--font);
+  font-size:14px;
+  -webkit-font-smoothing:antialiased
+}
+
+button,input,textarea {
+  font:inherit
+}
+
+button,a,input,textarea {
+  -webkit-tap-highlight-color:transparent
+}
+
+button,a {
+  touch-action:manipulation
+}
+
+button {
+  cursor:pointer
+}
+
+button {
+  color:inherit
+}
+
+a {
+  color:inherit;
+  text-decoration:none
+}
+
+button {
+  border:0
+}
+
+button:disabled {
+  cursor:not-allowed;
+  opacity:.4
+}
+
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible {
+  outline:2px solid #fff;
+  outline-offset:5px
+}
+
+button:hover {
+  filter:brightness(1.18)
+}
+
+button:active {
+  transform:translateY(1px)
+}
+
+h1,h2,h3,p {
+  margin:0
+}
+
+svg.icon {
+  width:19px;
+  height:19px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.5;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  display:block;
+  flex-shrink:0
+}
+
+button span[data-icon],a span[data-icon] {
+  display:inline-flex
+}
+
+[hidden] {
+  display:none!important
+}
+
+.muted {
+  color:var(--muted)
+}
+
+.panel {
+  background:linear-gradient(120deg,#141518e8,#101114ed);
+  border:1px solid var(--line);
+  border-radius:var(--radius)
+}
+
+.eyebrow {
+  font-size:10px;
+  letter-spacing:1.8px;
+  font-weight:500;
+  color:#b2b2ba
+}
+
+.status-dot {
+  display:inline-block;
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:#dedee2;
+  box-shadow:0 0 8px #fff3;
+  flex-shrink:0
+}
+
+.outline-pill {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  border:1px solid #ffffff18;
+  border-radius:30px;
+  padding:9px 12px;
+  font-size:10px;
+  color:#c8c8ce;
+  white-space:nowrap
+}
+
+.primary-button,.secondary-button {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:23px;
+  padding:13px 17px;
+  border-radius:8px;
+  font-size:12px;
+  font-weight:600;
+  background:#f1f1f2;
+  color:#16171a;
+  transition:filter .2s,transform .2s
+}
+
+.secondary-button {
+  background:#1a1b20;
+  color:#ddd;
+  border:1px solid #333
+}
+
+.icon-button {
+  padding:9px;
+  background:transparent;
+  border-radius:8px;
+  color:#a2a2ab
+}
+
+.text-link {
+  font-size:11px;
+  color:#aeafb8;
+  display:flex;
+  align-items:center;
+  gap:10px
+}
+
+.text-link:hover {
+  color:white
+}
+
+.sr-only {
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0
+}
+
+.skip-link {
+  position:fixed;
+  top:-100px;
+  left:20px;
+  z-index:100;
+  background:white;
+  color:black;
+  padding:15px
+}
+
+.skip-link:focus {
+  top:10px
+}
+
+.toast {
+  position:fixed;
+  bottom:28px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#eee;
+  color:#161616;
+  border-radius:12px;
+  padding:16px 24px;
+  box-shadow:0 12px 50px #0008;
+  z-index:20;
+  max-width:90vw
+}
+
+dialog {
+  width:min(480px,90vw);
+  background:#141518;
+  color:var(--text);
+  border:1px solid #ffffff25;
+  border-radius:20px;
+  padding:28px;
+  box-shadow:0 30px 100px #0008
+}
+
+dialog::backdrop {
+  background:#000a;
+  backdrop-filter:blur(7px)
+}
+
+.dialog-top {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:25px
+}
+
+#dialog-content h2 {
+  font-size:28px;
+  font-weight:500;
+  margin-bottom:16px
+}
+
+#dialog-content p {
+  color:#a6a7b0;
+  line-height:1.8;
+  margin-bottom:25px
+}
+
+#dialog-content .dialog-reading {
+  font-size:50px;
+  color:white;
+  margin-bottom:15px
+}
+
+.notice {
+  padding:24px;
+  margin-top:24px;
+  color:var(--muted);
+  line-height:1.7
+}
+
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    animation:none!important;
+    transition:none!important;
+    scroll-behavior:auto!important
+  }
+}
+

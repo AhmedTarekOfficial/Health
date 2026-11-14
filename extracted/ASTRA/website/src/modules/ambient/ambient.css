@@ -1,0 +1,224 @@
+/* A procedurally drawn astronaut and orbital paths: no external image dependencies. */
+#starfield {
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  z-index:0
+}
+
+.orbital-scene {
+  position:absolute;
+  right:0;
+  top:0;
+  bottom:0;
+  width:53%;
+  overflow:hidden;
+  perspective:800px;
+  isolation:isolate
+}
+
+/* Floating astronaut illustration with layered suit shading. */
+.astronaut {
+  position:absolute;
+  left:50%;
+  top:50%;
+  height:106%;
+  width:auto;
+  transform:translate(-50%,-50%);
+  overflow:visible;
+  filter:drop-shadow(0 18px 30px #000000a6);
+  z-index:3
+}
+
+.astro-body {
+  transform-box:view-box;
+  transform-origin:110px 150px;
+  animation:astro-float 11s ease-in-out infinite
+}
+
+.astro-arm {
+  transform-box:view-box
+}
+
+.astro-arm-left {
+  transform-origin:78px 122px;
+  animation:astro-arm-left 8s ease-in-out infinite
+}
+
+.astro-arm-right {
+  transform-origin:142px 122px;
+  animation:astro-arm-right 8s ease-in-out infinite
+}
+
+.astro-tether {
+  transform-box:view-box;
+  transform-origin:60px 130px;
+  animation:astro-tether-sway 13s ease-in-out infinite
+}
+
+.astro-visor-sweep {
+  transform-box:fill-box;
+  animation:astro-visor-sweep 7.5s ease-in-out infinite
+}
+
+.astro-lamp {
+  animation:astro-lamp 3.6s ease-in-out infinite
+}
+
+@keyframes astro-float {
+  0%,100% { transform:translateY(2px) rotate(-1.2deg) }
+  50% { transform:translateY(-7px) rotate(1.2deg) }
+}
+
+@keyframes astro-arm-left {
+  0%,100% { transform:rotate(-2deg) }
+  50% { transform:rotate(3.5deg) }
+}
+
+@keyframes astro-arm-right {
+  0%,100% { transform:rotate(2deg) }
+  50% { transform:rotate(-3.5deg) }
+}
+
+@keyframes astro-tether-sway {
+  0%,100% { transform:rotate(-1.5deg) }
+  50% { transform:rotate(1.5deg) }
+}
+
+@keyframes astro-visor-sweep {
+  0%,100% { transform:translateX(-9px); opacity:.6 }
+  50% { transform:translateX(15px); opacity:1 }
+}
+
+@keyframes astro-lamp {
+  0%,100% { opacity:.3 }
+  50% { opacity:.95 }
+}
+
+.orbit {
+  position:absolute;
+  left:50%;
+  top:50%;
+  border:1px solid #ffffff20;
+  border-radius:50%;
+  width:390px;
+  height:390px;
+  margin:-195px;
+  transform:rotateX(68deg) rotateZ(-35deg);
+  z-index:2;
+  pointer-events:none
+}
+
+.scene-grid {
+  position:absolute;
+  inset:0;
+  background-image:linear-gradient(#fff02 1px,transparent 1px),linear-gradient(90deg,#fff02 1px,transparent 1px);
+  background-size:42px 42px;
+  mask-image:radial-gradient(ellipse,black,transparent 66%)
+}
+
+.scene-label {
+  position:absolute;
+  z-index:3;
+  font-size:9px;
+  letter-spacing:1px;
+  color:#ddd
+}
+
+.label-top {
+  top:43px;
+  left:18px
+}
+
+.scene-label small {
+  display:block;
+  font-size:6px;
+  letter-spacing:1.5px;
+  margin-top:7px;
+  color:#777b85
+}
+
+.label-top .status-dot {
+  margin-right:5px
+}
+
+.label-top:after {
+  content:'';
+  position:absolute;
+  left:25px;
+  top:39px;
+  width:70px;
+  height:42px;
+  border-left:1px solid #ffffff20;
+  border-bottom:1px solid #ffffff20;
+  transform:skewY(25deg)
+}
+
+.label-bottom {
+  right:27px;
+  bottom:63px
+}
+
+.crosshair {
+  margin-right:7px
+}
+
+.orbit-caption {
+  position:absolute;
+  bottom:25px;
+  left:50%;
+  transform:translateX(-50%);
+  white-space:nowrap;
+  font-size:6px;
+  letter-spacing:2px;
+  color:#70727c
+}
+
+body.motion-paused::before,body.motion-paused *,body.motion-paused *:before,body.motion-paused *:after {
+  animation-play-state:paused!important
+}
+
+@media(max-width:1000px) {
+  .label-top {
+    left:0
+  }
+  .label-bottom {
+    right:10px
+  }
+}
+
+@media(max-width:600px) {
+  .orbital-scene {
+    width:52%;
+    right:-35px;
+    opacity:.75
+  }
+  .scene-label,.orbit-caption {
+    display:none
+  }
+}
+
+
+/* Gentle movement is visible in the open margins and between panels. */
+body { isolation: isolate; }
+body::before {
+  content: '';
+  position: fixed;
+  inset: -15%;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 15% 65%, #b9bfce10, transparent 45%),
+              radial-gradient(ellipse at 85% 20%, #c9cbd810, transparent 40%);
+  animation: space-drift 24s ease-in-out infinite alternate;
+}
+@keyframes space-drift {
+  from { transform: translate3d(-2%, -2%, 0) rotate(-5deg); }
+  to { transform: translate3d(3%, 4%, 0) rotate(5deg); }
+}
+.orbit-one { animation: orbit-turn 36s linear infinite; }
+@keyframes orbit-turn {
+  from { transform: rotateX(68deg) rotateZ(-35deg); }
+  to { transform: rotateX(68deg) rotateZ(325deg); }
+}

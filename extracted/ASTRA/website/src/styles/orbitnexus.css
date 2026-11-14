@@ -1,0 +1,394 @@
+/* OrbitNexus Astronaut Health & Biosensor Intelligence Styles */
+
+/* ── Aerospace Mission Telemetry Ribbon ── */
+.mission-telemetry-strip {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 8px 16px;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 10px;
+  color: #9ca3af;
+  margin-top: 16px;
+  font-family: monospace;
+}
+
+.mission-telemetry-strip span strong {
+  color: #e5e7eb;
+}
+
+/* ── Voice Equalizer Audio Visualizer ── */
+.voice-equalizer {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  height: 20px;
+  margin: 10px auto;
+}
+
+.is-listening .voice-equalizer {
+  display: flex;
+}
+
+.voice-equalizer span {
+  display: block;
+  width: 3px;
+  height: 100%;
+  background: #4ade80;
+  border-radius: 2px;
+  animation: eqWave 0.8s ease-in-out infinite alternate;
+}
+
+.voice-equalizer span:nth-child(1) { animation-delay: 0.1s; height: 6px; }
+.voice-equalizer span:nth-child(2) { animation-delay: 0.3s; height: 18px; }
+.voice-equalizer span:nth-child(3) { animation-delay: 0.15s; height: 12px; }
+.voice-equalizer span:nth-child(4) { animation-delay: 0.4s; height: 20px; }
+.voice-equalizer span:nth-child(5) { animation-delay: 0.25s; height: 10px; }
+
+@keyframes eqWave {
+  0% { transform: scaleY(0.3); opacity: 0.5; }
+  100% { transform: scaleY(1.2); opacity: 1; }
+}
+
+/* ── Top Bar Mode Switcher & Smartwatch Bar ── */
+.controls-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 10px 16px;
+  background: rgba(17, 18, 21, 0.85);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  margin-bottom: 24px;
+}
+
+.mode-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mode-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.mode-btn:hover {
+  background: #ffffff0d;
+  color: #fff;
+}
+
+.mode-btn.active {
+  background: #ffffff18;
+  border-color: #ffffff44;
+  color: #fff;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
+}
+
+.mode-btn.active.realtime {
+  background: rgba(34, 197, 94, 0.15);
+  border-color: rgba(34, 197, 94, 0.5);
+  color: #4ade80;
+  box-shadow: 0 0 14px rgba(74, 222, 128, 0.2);
+}
+
+.watch-status-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.watch-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  background: #ffffff06;
+  color: var(--muted);
+  transition: all 0.25s ease;
+}
+
+.watch-pill.connected {
+  border-color: rgba(34, 197, 94, 0.4);
+  background: rgba(34, 197, 94, 0.08);
+  color: #4ade80;
+}
+
+.watch-pill.disconnected {
+  border-color: rgba(239, 68, 68, 0.4);
+  background: rgba(239, 68, 68, 0.08);
+  color: #f87171;
+}
+
+.watch-toggle-btn {
+  padding: 5px 10px;
+  font-size: 10px;
+  border-radius: 6px;
+  border: 1px solid #ffffff1a;
+  background: #ffffff0a;
+  color: #b0b4c0;
+  transition: all 0.2s;
+}
+
+.watch-toggle-btn:hover {
+  background: #ffffff15;
+  color: #fff;
+}
+
+/* ── 2-Second Dynamic Pulse Effect ── */
+@keyframes vitalPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.4);
+    border-color: rgba(74, 222, 128, 0.8);
+  }
+  60% {
+    box-shadow: 0 0 18px 2px rgba(74, 222, 128, 0.2);
+    border-color: rgba(74, 222, 128, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0);
+    border-color: var(--line);
+  }
+}
+
+.vital-card.is-pulsing {
+  animation: vitalPulse 1.2s ease-out;
+}
+
+.vital-card {
+  transition: transform 0.2s, border-color 0.25s, box-shadow 0.25s;
+}
+
+/* ── AI Chatbot Conversation & Voice Bridge ── */
+.chat-container {
+  margin-top: 20px;
+  border-top: 1px solid #ffffff12;
+  padding-top: 16px;
+}
+
+.chat-history {
+  max-height: 260px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 6px;
+  margin-bottom: 14px;
+}
+
+.chat-bubble {
+  max-width: 82%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.chat-bubble.user {
+  align-self: flex-end;
+  background: #252833;
+  color: #f3f4f6;
+  border-bottom-right-radius: 2px;
+}
+
+.chat-bubble.ai {
+  align-self: flex-start;
+  background: #141720;
+  border: 1px solid #ffffff18;
+  color: #d1d5db;
+  border-bottom-left-radius: 2px;
+}
+
+.chat-bubble .sender {
+  font-size: 9px;
+  color: #8c909e;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* ── Modern AI Composer ── */
+.chat-input-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+  padding: 7px 7px 7px 20px;
+  border: 1px solid #ffffff14;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #171a21 0%, #0e1015 100%);
+  box-shadow: inset 0 1px 0 #ffffff0f, 0 14px 34px -22px #000;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.chat-input-bar:focus-within,
+.chat-input-bar.is-voice-active {
+  border-color: #4ade8059;
+  background: linear-gradient(180deg, #1c1f27 0%, #111319 100%);
+  box-shadow: inset 0 1px 0 #ffffff14, 0 0 0 3px #4ade8024, 0 18px 40px -24px #000;
+}
+
+.chat-input-bar input {
+  flex: 1;
+  min-width: 0;
+  padding: 11px 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #f4f5f8;
+  font-size: 13px;
+  letter-spacing: 0.1px;
+}
+
+.chat-input-bar input::placeholder {
+  color: #6c7180;
+}
+
+.chat-input-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.chat-icon-btn,
+.chat-test-btn,
+.chat-send-btn {
+  display: inline-grid;
+  place-items: center;
+  border-radius: 999px;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.chat-icon-btn {
+  width: 34px;
+  height: 34px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #a9afbd;
+}
+
+.chat-icon-btn .icon {
+  width: 16px;
+  height: 16px;
+}
+
+.chat-icon-btn:hover {
+  background: #ffffff0f;
+  color: #fff;
+}
+
+.chat-icon-btn.active {
+  color: #f87171;
+  background: #ef44441f;
+  box-shadow: inset 0 0 0 1px #ef44445c;
+}
+
+.chat-test-btn {
+  height: 34px;
+  padding: 0 13px;
+  border: 1px solid #ffffff14;
+  background: #ffffff08;
+  color: #9aa1b0;
+  font-size: 10.5px;
+  letter-spacing: 0.2px;
+}
+
+.chat-test-btn:hover {
+  background: #ffffff12;
+  border-color: #ffffff2b;
+  color: #e7e9ef;
+}
+
+.chat-send-btn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: linear-gradient(160deg, #ffffff, #ccd2de);
+  color: #0d0f14;
+  box-shadow: 0 6px 16px -8px #ffffff66;
+}
+
+.chat-send-btn:hover {
+  background: #fff;
+  transform: translateY(-1px);
+}
+
+.chat-send-btn .icon {
+  width: 16px;
+  height: 16px;
+}
+
+@media (max-width: 600px) {
+  .chat-input-bar {
+    gap: 4px;
+    padding-left: 16px;
+  }
+  .chat-test-btn {
+    display: none;
+  }
+}
+
+/* ── Online Learning Panel ── */
+.online-learn-panel {
+  margin-top: 24px;
+  padding: 20px 24px;
+}
+
+.ol-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+.ol-stat-box {
+  background: #0d0e12;
+  border: 1px solid var(--line);
+  padding: 12px 14px;
+  border-radius: 8px;
+}
+
+.ol-stat-label {
+  font-size: 9px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ol-stat-value {
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  margin-top: 4px;
+}
+
+/* ── Responsive adjustments ── */
+@media (max-width: 900px) {
+  .vitals-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .controls-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

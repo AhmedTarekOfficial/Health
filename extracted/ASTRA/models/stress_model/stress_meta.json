@@ -1,0 +1,16 @@
+{
+  "model_type": "XGBClassifier",
+  "accuracy": 0.8966666666666666,
+  "features": [
+    "heart_rate",
+    "hrv_rmssd",
+    "eda_microsiemens",
+    "skin_temp_c",
+    "respiration_rate"
+  ],
+  "classes": {
+    "0": "Baseline/Relaxed",
+    "1": "Acute Stress/High Cognitive Load",
+    "2": "Recovery/Rest"
+  }
+}

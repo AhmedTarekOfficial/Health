@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="#08090b" name="theme-color"/>
+  <meta content="OrbitNexus — Autonomous Bio-Astronautics & Clinical Decision Support System. Real-time biosensors, 5 ML models, space disease hazard mitigation, and hands-free aerospace AI." name="description"/>
+  <title>
+   OrbitNexus — Autonomous Astronaut Health &amp; Biosensor Intelligence
+  </title>
+  <link href="/src/styles/base.css" rel="stylesheet"/>
+  <link href="/src/styles/layout.css" rel="stylesheet"/>
+  <link href="/src/modules/ambient/ambient.css" rel="stylesheet"/>
+  <link href="/src/modules/dashboard/dashboard.css" rel="stylesheet"/>
+  <link href="/src/modules/checkin/checkin.css" rel="stylesheet"/>
+  <link href="/src/styles/compact.css" rel="stylesheet"/>
+  <link href="/src/modules/checkin/voice.css" rel="stylesheet"/>
+  <link href="/src/styles/orbitnexus.css" rel="stylesheet"/>
+  <link href="/src/modules/checkin/message-content.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <a class="skip-link" href="#main">
+   Skip to content
+  </a>
+  <canvas aria-hidden="true" id="starfield">
+  </canvas>
+  <div class="app-shell">
+   <header class="topbar">
+    <a aria-label="OrbitNexus home" class="brand" href="#main">
+     <span class="brand-symbol">
+      ◉
+     </span>
+     ORBITNEXUS
+     <span class="brand-dot">
+      ®
+     </span>
+     <span style="font-size: 10px; color: var(--muted); margin-left: 8px; font-weight: normal; letter-spacing: 1px;">
+      NASA FLIGHT SURGEON CONSOLE
+     </span>
+    </a>
+    <div class="top-actions">
+     <span class="mission-clock">
+      <span class="status-dot">
+      </span>
+      MET
+      <strong>
+       042d 14:38:22
+      </strong>
+     </span>
+     <button aria-label="Pause background motion" aria-pressed="false" class="icon-button" id="motion-toggle" title="Pause background motion">
+      <span data-icon="pause">
+      </span>
+     </button>
+     <button aria-pressed="false" class="sound-button" id="sound-toggle">
+      <span data-icon="soundOff">
+      </span>
+      <span id="sound-label">
+       Audio off
+      </span>
+     </button>
+    </div>
+   </header>
+
+   <main id="main" tabindex="-1">
+    <section class="view" id="overview">
+     <!-- Mission Operations Header -->
+     <section aria-label="Mission Clinical Overview" class="mission-header">
+      <div class="hero-copy">
+       <p class="eyebrow">
+        EXPEDITION 71 / BIO-ASTRONAUTICS &amp; CLINICAL DECISION SUPPORT
+       </p>
+       <h1>
+        Autonomous Crew Health.
+        <span>
+         In orbit.
+        </span>
+       </h1>
+       <p>
+        Multi-modal wearable biosensors, clinical spaceflight pathology mitigation, and hands-free aerospace AI assistant.
+       </p>
+       <div class="mission-telemetry-strip">
+        <span><strong>Crew:</strong> CDR Alex Vance, Ph.D.</span>
+        <span><strong>Altitude:</strong> 418.4 km (LEO)</span>
+        <span><strong>Speed:</strong> 7.66 km/s</span>
+        <span><strong>Gravity:</strong> 10⁻⁶ g</span>
+        <span><strong>Cabin P:</strong> 101.3 kPa (14.69 psi)</span>
+        <span><strong>Atmosphere:</strong> 21.0% O₂ | 2.8 mmHg ppCO₂</span>
+       </div>
+      </div>
+      <div aria-label="Animated astronaut floating in orbit" class="orbital-scene" role="img">
+       <div aria-hidden="true" class="orbit orbit-one">
+       </div>
+       <svg aria-hidden="true" class="astronaut" fill="none" viewBox="0 0 220 300" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+         <linearGradient gradientUnits="userSpaceOnUse" id="astro-suit" x1="70" x2="150" y1="106" y2="210">
+          <stop stop-color="#f7f9fc">
+          </stop>
+          <stop offset="0.42" stop-color="#d8dde7">
+          </stop>
+          <stop offset="0.76" stop-color="#aab1c0">
+          </stop>
+          <stop offset="1" stop-color="#767e8e">
+          </stop>
+         </linearGradient>
+         <linearGradient gradientUnits="userSpaceOnUse" id="astro-suit-soft" x1="0" x2="0" y1="106" y2="268">
+          <stop stop-color="#eef1f7">
+          </stop>
+          <stop offset="0.55" stop-color="#c8ced9">
+          </stop>
+          <stop offset="1" stop-color="#98a0af">
+          </stop>
+         </linearGradient>
+         <radialGradient cx="0.32" cy="0.24" id="astro-helmet" r="0.86">
+          <stop stop-color="#ffffff">
+          </stop>
+          <stop offset="0.54" stop-color="#dfe4ec">
+          </stop>
+          <stop offset="1" stop-color="#8b93a2">
+          </stop>
+         </radialGradient>
+         <radialGradient cx="0.66" cy="0.74" id="astro-helmet-shade" r="0.72">
+          <stop stop-color="#2b2f38" stop-opacity="0.42">
+          </stop>
+          <stop offset="1" stop-color="#2b2f38" stop-opacity="0">
+          </stop>
+         </radialGradient>
+         <linearGradient gradientUnits="userSpaceOnUse" id="astro-visor" x1="82" x2="145" y1="38" y2="96">
+          <stop stop-color="#171410">
+          </stop>
+          <stop offset="0.34" stop-color="#3d2f18">
+          </stop>
+          <stop offset="0.66" stop-color="#9a7333">
+          </stop>
+          <stop offset="1" stop-color="#e6c47f">
+          </stop>
+         </linearGradient>
+         <linearGradient gradientUnits="userSpaceOnUse" id="astro-visor-gloss" x1="78" x2="130" y1="40" y2="80">
+          <stop stop-color="#ffffff" stop-opacity="0.6">
+          </stop>
+          <stop offset="0.6" stop-color="#ffffff" stop-opacity="0.05">
+          </stop>
+          <stop offset="1" stop-color="#ffffff" stop-opacity="0">
+          </stop>
+         </linearGradient>
+         <linearGradient gradientUnits="userSpaceOnUse" id="astro-pack" x1="0" x2="0" y1="102" y2="218">
+          <stop stop-color="#c4cad6">
+          </stop>
+          <stop offset="1" stop-color="#5d6472">
+          </stop>
+         </linearGradient>
+         <radialGradient cx="0.5" cy="0.5" id="astro-glow" r="0.5">
+          <stop stop-color="#9db4dd" stop-opacity="0.26">
+          </stop>
+          <stop offset="1" stop-color="#9db4dd" stop-opacity="0">
+          </stop>
+         </radialGradient>
+         <clipPath id="astro-visor-clip">
+          <ellipse cx="112" cy="66" rx="33" ry="29">
+          </ellipse>
+         </clipPath>
+        </defs>
+        <circle cx="110" cy="148" fill="url(#astro-glow)" r="104">
+        </circle>
+        <path class="astro-tether" d="M60 130C32 124 12 104 2 76" stroke="#cfd6e6" stroke-dasharray="3 6" stroke-linecap="round" stroke-opacity="0.3" stroke-width="1.4">
+        </path>
+        <g class="astro-body">
+         <rect fill="url(#astro-pack)" height="116" rx="20" width="108" x="56" y="102">
+         </rect>
+         <rect fill="none" height="104" rx="16" stroke="#ffffff24" width="98" x="61" y="108">
+         </rect>
+         <rect fill="url(#astro-suit-soft)" height="74" rx="13" width="27" x="83" y="196">
+         </rect>
+         <rect fill="url(#astro-suit-soft)" height="74" rx="13" width="27" x="110" y="196">
+         </rect>
+         <path d="M110 200v100" stroke="#0b0d12" stroke-opacity="0.12">
+         </path>
+         <rect fill="#a7aebb" height="13" rx="6.5" width="27" x="83" y="244">
+         </rect>
+         <rect fill="#a7aebb" height="13" rx="6.5" width="27" x="110" y="244">
+         </rect>
+         <rect fill="url(#astro-suit)" height="46" rx="12" width="25" x="84" y="256">
+         </rect>
+         <rect fill="url(#astro-suit)" height="46" rx="12" width="25" x="111" y="256">
+         </rect>
+         <rect fill="url(#astro-suit)" height="106" rx="26" width="80" x="70" y="106">
+         </rect>
+         <path d="M110 112V204" stroke="#0b0d12" stroke-opacity="0.1">
+         </path>
+         <path d="M71 126c-4 22-4 48 0 70" stroke="#ffffff" stroke-linecap="round" stroke-opacity="0.45" stroke-width="2">
+         </path>
+         <rect fill="#14171e" height="36" rx="9" stroke="#ffffff2b" width="44" x="88" y="128">
+         </rect>
+         <circle cx="99" cy="145" fill="#7ee0a1" r="3.4">
+         </circle>
+         <circle cx="110" cy="145" fill="#e8c273" r="3.4">
+         </circle>
+         <rect fill="#8f97a6" height="10" rx="2" width="6" x="120" y="140">
+         </rect>
+         <rect fill="#ffffff4d" height="2" rx="1" width="16" x="94" y="153">
+         </rect>
+         <path d="M90 126c-9-9-14-21-14-34" stroke="#aab1bf" stroke-linecap="round" stroke-width="4">
+         </path>
+         <path d="M130 126c9-9 14-21 14-34" stroke="#aab1bf" stroke-linecap="round" stroke-width="4">
+         </path>
+         <path d="M137 124c8 22 9 46 6 68" stroke="#1b1e26" stroke-linecap="round" stroke-opacity="0.25" stroke-width="3">
+         </path>
+         <g transform="rotate(15 78 122)">
+          <g class="astro-arm astro-arm-left">
+           <rect fill="url(#astro-suit-soft)" height="72" rx="15" width="30" x="63" y="110">
+           </rect>
+           <rect fill="#a7aebb" height="13" rx="6.5" width="28" x="64" y="176">
+           </rect>
+           <rect fill="url(#astro-suit)" height="52" rx="12.5" width="25" x="66" y="184">
+           </rect>
+           <rect fill="#dde1e9" height="27" rx="13" width="32" x="62" y="230">
+           </rect>
+           <path d="M70 236v15M78 236v15" stroke="#98a0af" stroke-linecap="round" stroke-width="1.4">
+           </path>
+          </g>
+         </g>
+         <g transform="rotate(-15 142 122)">
+          <g class="astro-arm astro-arm-right">
+           <rect fill="url(#astro-suit-soft)" height="72" rx="15" width="30" x="127" y="110">
+           </rect>
+           <rect fill="#a7aebb" height="13" rx="6.5" width="28" x="128" y="176">
+           </rect>
+           <rect fill="url(#astro-suit)" height="52" rx="12.5" width="25" x="129" y="184">
+           </rect>
+           <rect fill="#dde1e9" height="27" rx="13" width="32" x="126" y="230">
+           </rect>
+           <path d="M134 236v15M142 236v15" stroke="#98a0af" stroke-linecap="round" stroke-width="1.4">
+           </path>
+          </g>
+         </g>
+         <ellipse cx="110" cy="107" fill="#c2c8d4" rx="28" ry="9" stroke="#868d9c" stroke-width="1.2">
+         </ellipse>
+         <circle cx="110" cy="62" fill="url(#astro-helmet)" r="45">
+         </circle>
+         <circle cx="110" cy="62" fill="url(#astro-helmet-shade)" r="44">
+         </circle>
+         <circle cx="110" cy="62" fill="none" r="45" stroke="#7f8797" stroke-opacity="0.9" stroke-width="1.6">
+         </circle>
+         <path d="M78 40c8-10 20-15 31-14" stroke="#ffffff" stroke-linecap="round" stroke-opacity="0.7" stroke-width="2.6">
+         </path>
+         <rect fill="#c7cdd8" height="15" rx="4" width="9" x="62" y="55">
+         </rect>
+         <rect fill="#c7cdd8" height="15" rx="4" width="9" x="149" y="55">
+         </rect>
+         <ellipse cx="112" cy="66" fill="url(#astro-visor)" rx="33" ry="29">
+         </ellipse>
+         <ellipse cx="112" cy="66" fill="none" rx="33" ry="29" stroke="#241c11" stroke-opacity="0.6" stroke-width="1.6">
+         </ellipse>
+         <g clip-path="url(#astro-visor-clip)">
+          <g transform="rotate(-28 96 50)">
+           <ellipse class="astro-visor-sweep" cx="96" cy="50" fill="url(#astro-visor-gloss)" rx="30" ry="15">
+           </ellipse>
+          </g>
+         </g>
+         <path d="M88 47c6-9 16-13 25-13" stroke="#ffffff" stroke-linecap="round" stroke-opacity="0.5" stroke-width="2.2">
+         </path>
+         <circle class="astro-lamp" cx="86" cy="27" fill="#ffe8b5" r="2.6">
+         </circle>
+        </g>
+       </svg>
+      </div>
+     </section>
+
+     <!-- Mode Switcher & Smartwatch Detection Bar -->
+     <div class="controls-bar">
+      <div class="mode-selector">
+       <span style="font-size: 11px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Telemetry Feed:</span>
+       <button class="mode-btn active" id="btn-mode-demo" type="button">
+        Trial Demo (Static Baseline)
+       </button>
+       <button class="mode-btn" id="btn-mode-realtime" type="button">
+        Real-Time Watch (Dynamic 2s)
+       </button>
+      </div>
+      <div class="watch-status-group">
+       <span class="watch-pill connected" id="watch-status-pill">
+        <span class="status-dot" style="background:#22c55e"></span>
+        OrbitWatch-01 (BLE 125Hz Connected)
+       </span>
+       <button class="watch-toggle-btn" id="btn-toggle-watch" type="button">
+        Disconnect Watch
+       </button>
+      </div>
+     </div>
+
+     <!-- Main Workspace: Voice Flight Audio & Medical AI + Vitals Summary -->
+     <div class="dashboard-workspace">
+      <!-- OrbitNexus Flight Surgeon AI Assistant & Voice Stage -->
+      <section aria-labelledby="composer-heading" class="checkin-composer panel voice-card" id="checkin">
+       <div class="composer-top">
+        <div>
+         <h2 id="composer-heading">
+          Flight Audio Communications Bus &amp; Medical AI
+         </h2>
+         <p>
+          Speak hands-free with OrbitNexus AI. Speech recognition types your words in real-time and auto-submits on silence.
+         </p>
+        </div>
+        <button aria-haspopup="dialog" aria-label="Write observation" class="write-toggle icon-button" id="open-writing" title="Write observation" type="button">
+         <span data-icon="keyboard">
+         </span>
+         <span class="write-label">
+          Manual Log
+         </span>
+        </button>
+       </div>
+
+       <div class="voice-stage" id="voice-stage">
+        <div aria-hidden="true" class="space-orb">
+         <div class="orb-halo">
+         </div>
+         <div class="orb-ring orb-ring-back">
+         </div>
+         <div class="orb-core">
+          <div class="orb-clouds">
+          </div>
+          <div class="orb-light">
+          </div>
+         </div>
+         <div class="orb-ring orb-ring-front">
+         </div>
+         <span class="orb-star star-one">
+         </span>
+         <span class="orb-star star-two">
+         </span>
+        </div>
+        <h3 id="voice-title">
+         Astronaut Voice Communication Bus
+        </h3>
+        <p id="voice-status" role="status">
+         Tap mic or Speak to AI. Speech recognition types live and auto-stops when you finish speaking.
+        </p>
+
+        <!-- Animated Audio Waveform Equalizer -->
+        <div class="voice-equalizer" id="voice-equalizer">
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+        </div>
+
+        <div class="voice-settings">
+         <button aria-label="Enable microphone" aria-pressed="false" class="mic-control" id="voice-toggle" type="button">
+          <span data-icon="mic">
+          </span>
+          <span>
+           Enable mic
+          </span>
+         </button>
+         <label class="sr-only" for="voice-language">
+          Communication Language
+         </label>
+         <select aria-label="Communication Language" id="voice-language">
+          <option value="en-US">
+           English (US)
+          </option>
+          <option value="ar-EG">
+           العربية
+          </option>
+         </select>
+        </div>
+        <p id="voice-help">
+         Recognized audio automatically populates the clinical query below.
+        </p>
+        <p class="voice-disclosure">
+         On-device processing compliant with NASA spaceflight data governance.
+        </p>
+       </div>
+
+       <div class="voice-draft" hidden="" id="voice-draft">
+        <p class="eyebrow">
+         LIVE TRANSCRIPTION FEED / AUTO-INPUT
+        </p>
+        <p dir="auto" id="voice-transcript">
+        </p>
+       </div>
+
+       <!-- OrbitNexus AI Chatbot Interface -->
+       <div class="chat-container">
+        <div class="chat-history" id="chat-history">
+         <div class="chat-bubble ai">
+          <div class="sender">
+           OrbitNexus AI · Flight Surgeon Officer
+          </div>
+          <div class="bubble-text">
+           Commander Vance, OrbitNexus AI is monitoring your multi-sensor telemetry aboard Expedition 71. Bioimpedance fluid equilibrium is calibrated and clinical hazard matrices are active. Speak hands-free or ask a flight surgeon question below.
+          </div>
+         </div>
+        </div>
+
+        <form aria-label="OrbitNexus AI consultation" class="chat-input-bar" id="chat-form">
+         <input autocomplete="off" dir="auto" id="chat-input" placeholder="Ask OrbitNexus AI about crew health..." type="text"/>
+         <div class="chat-input-actions">
+          <button aria-label="Toggle hands-free speech input" aria-pressed="false" class="chat-icon-btn" id="btn-voice-chat" title="Hands-free speech input" type="button">
+           <span data-icon="mic">
+           </span>
+          </button>
+          <button class="chat-test-btn" id="btn-simulate-voice" title="Simulate astronaut voice input" type="button">
+           Test voice
+          </button>
+          <button aria-label="Send query" class="chat-send-btn" id="btn-chat-send" title="Send query" type="submit">
+           <span data-icon="send">
+           </span>
+          </button>
+         </div>
+        </form>
+       </div>
+
+       <p hidden="" id="feeling-feedback" role="status">
+       </p>
+
+       <details class="session-notes" id="session-notes" style="margin-top: 18px;">
+        <summary>
+         Flight Surgeon Medical Logs &amp; Session Archive
+         <span id="note-count">
+          0 notes
+         </span>
+        </summary>
+        <div id="log-list">
+        </div>
+        <button class="secondary-button" id="export-log" type="button">
+         Export Clinical Log
+         <span data-icon="download">
+         </span>
+        </button>
+       </details>
+      </section>
+
+      <!-- Health Summary: Vitals & Autonomic Rhythm -->
+      <div class="health-summary">
+       <section aria-labelledby="vitals-heading" class="vitals-section">
+        <div class="section-heading">
+         <h2 id="vitals-heading">
+          Continuous Physiological Telemetry
+          <span id="vitals-mode-label">
+           NASA HRP Standard Measures Protocol
+          </span>
+         </h2>
+        </div>
+        <div class="vitals-grid" id="vital-cards">
+        </div>
+       </section>
+
+      </div>
+     </div>
+
+    </section>
+
+   </main>
+  </div>
+
+  <!-- Writing Dialog (Accessible Fallback) -->
+  <dialog aria-labelledby="writing-title" class="writing-dialog" id="writing-dialog">
+   <div class="dialog-top">
+    <span class="eyebrow">
+     ORBITNEXUS / MANUAL CLINICAL LOG
+    </span>
+    <button aria-label="Close window" class="icon-button" id="close-writing" type="button">
+     <span data-icon="close">
+     </span>
+    </button>
+   </div>
+   <h2 id="writing-title">
+    Manual Flight Log Observation
+   </h2>
+   <p class="writing-intro">
+    Record subjective physiological observations or clinical symptoms for Flight Surgeon review.
+   </p>
+   <form id="feeling-form">
+    <label class="sr-only" for="feeling-input">
+     Observation text
+    </label>
+    <textarea id="feeling-input" maxlength="3000" placeholder="Enter clinical observation (e.g., mild neurovestibular disorientation following EVA ingress)..." rows="5"></textarea>
+    <button aria-label="Save observation" class="send-button" type="submit">
+     <span data-icon="arrowUpRight">
+     </span>
+    </button>
+    <fieldset class="energy-picker">
+     <legend>
+      Physical Exertion Index
+      <span>
+       Standard Rating
+      </span>
+     </legend>
+     <label>
+      <input name="energy" type="radio" value="Low"/>
+      <span>
+       Nominal Rest
+      </span>
+     </label>
+     <label>
+      <input name="energy" type="radio" value="Steady"/>
+      <span>
+       Moderate IVA
+      </span>
+     </label>
+     <label>
+      <input name="energy" type="radio" value="High"/>
+      <span>
+       High Exertion / EVA
+      </span>
+     </label>
+    </fieldset>
+   </form>
+  </dialog>
+
+  <!-- Interactive Detail Dialog for Vitals -->
+  <dialog id="detail-dialog">
+   <div class="dialog-top">
+    <span class="eyebrow">
+     ORBITNEXUS / CLINICAL &amp; AEROSPACE INTELLIGENCE
+    </span>
+    <button aria-label="Close dialog" class="icon-button" id="close-dialog" type="button">
+     <span data-icon="close">
+     </span>
+    </button>
+   </div>
+   <div id="dialog-content">
+   </div>
+   <button class="primary-button" id="dialog-done" type="button">
+    Acknowledge &amp; Close
+   </button>
+  </dialog>
+
+  <!-- Toast Notification System -->
+  <div class="toast" hidden="" id="toast" role="status">
+  </div>
+
+  <script src="/src/app.js" type="module">
+  </script>
+ </body>
+</html>
