@@ -1,0 +1,10 @@
+.git
+.gitignore
+.freebuff
+OrbitNexus_SpaceApps_Project.zip
+**/__pycache__
+**/*.pyc
+.pytest_cache
+.mypy_cache
+.venv
+venv
